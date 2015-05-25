@@ -2,10 +2,10 @@
 yaml + includes
 """
 from yaml import *
+import os.path
 _root = os.path.curdir
 def _include(loader, node):
     """Include another YAML file."""
-    import os.path
     global _root
     old_root = _root
     filename = os.path.join(root, loader.construct_scalar(node))
